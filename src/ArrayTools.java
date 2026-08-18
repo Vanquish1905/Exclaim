@@ -41,17 +41,41 @@ public class ArrayTools {
         return arrays;
     }
     public static int[] copy(int[] array, int start, int end){
-        int[] arrays = new int[end];
-        for(int i=start; i<end;i++){
+        int[] arrays = new int[end-start];
+        if (start<end && end<=array.length){
+            for(int i=start; i<end;i++){
+                arrays[i-start] = array[i];
+            }
+        }
+        return arrays;
+    }
+    public static int[] addSlot(int[] array){
+        int[] arrays = new int[array.length+1];
+        for(int i=0; i<array.length;i++){
             arrays[i] = array[i];
         }
-        System.out.println(arrayToString(arrays));
+        return arrays;
+
+    }
+    public static int[] addSlots(int[] array, int amount){
+        int[] arrays = new int[array.length+amount];
+        for(int i=0; i<array.length;i++){
+            arrays[i] = array[i];
+        }
+        return arrays;
+    }
+    public static int[] append(int[] array, int value){
+        int[] arrays = new int[array.length+1];
+        for(int i=0; i<array.length;i++){
+            arrays[i] = array[i];
+        }
+        arrays[arrays.length-1]=value;
         return arrays;
     }
 
 
     public static void main(String[] args) {
-        copy(argi,1,4);
+        append(argi,1);
     }
 
 
