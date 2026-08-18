@@ -1,5 +1,4 @@
 public class ArrayTools {
-    static int[] ar = {1,5,1,20,140};
 
     public static int head(int[] array){
         return array[0];
@@ -12,13 +11,7 @@ public class ArrayTools {
         for (int number : array){
             arrays = arrays + number +", ";
         }
-
-        System.out.println(arrays);
-        return null;
-    }
-
-    public static void main(String[] args) {
-        arrayToString(ar);
+        return arrays;
     }
 
 
