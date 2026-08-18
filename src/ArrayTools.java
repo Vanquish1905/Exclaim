@@ -7,10 +7,11 @@ public class ArrayTools {
         return array[array.length-1];
     }
     public static String arrayToString(int[] array){
-        String arrays = "";
+        String arrays = "[";
         for (int number : array){
             arrays = arrays + number +", ";
         }
+        arrays = arrays +"]";
         return arrays;
     }
 
