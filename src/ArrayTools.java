@@ -72,10 +72,38 @@ public class ArrayTools {
         arrays[arrays.length-1]=value;
         return arrays;
     }
+    public static int[] addToAll(int[] array, int value){
+        for(int i=0; i<array.length;i++){
+            array[i] = array[i] + value;
+        }
+        System.out.println(arrayToString(array));
+        return array;
+    }
+    public static float[] swap(float[] array, int index1, int index2){
+        float indexOne = array[index1];
+        float indexTwo = array[index2];
+        array[index1] = indexTwo;
+        array[index2] = indexOne;
+        System.out.println(arrayToString(array));
+        return array;
+    }
+    static char[] myCharArray = {'a', 'b', 'c'};
+    public static char[] leftShift(char[] array){
+        char index0 = array[0];
+        for(int i=0; i<array.length;i++){
+            char temp = array[i+1];
+            array[i] = temp;
+        }
+        array[array.length-1] = index0;
+        System.out.println(arrayToString(array));
+        return array;
+    }
+
+
 
 
     public static void main(String[] args) {
-        append(argi,1);
+        leftShift(myCharArray);
     }
 
 
