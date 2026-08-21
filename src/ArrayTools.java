@@ -27,7 +27,6 @@ public class ArrayTools {
             arrays = arrays + number +", ";
         }
         arrays = arrays +"]";
-        System.out.println(arrays);
         return arrays;
     }
     public static int[] copy(int[] array){
@@ -73,7 +72,6 @@ public class ArrayTools {
         for(int i=0; i<array.length;i++){
             array[i] = array[i] + value;
         }
-        System.out.println(arrayToString(array));
         return array;
     }
     public static float[] swap(float[] array, int i, int j){
