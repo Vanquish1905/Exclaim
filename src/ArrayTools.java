@@ -89,13 +89,14 @@ public class ArrayTools {
     }
     static char[] myCharArray = {'a', 'b', 'c'};
     public static char[] leftShift(char[] array){
-        char index0 = array[0];
-        for(int i=0; i<array.length-1;i++){
-            char temp = array[i+1];
-            array[i] = temp;
+        if (array.length>0){
+            char index0 = array[0];
+            for(int i=0; i<array.length-1;i++){
+                char temp = array[i+1];
+                array[i] = temp;
+            }
+            array[array.length-1] = index0;
         }
-        array[array.length-1] = index0;
-        System.out.println(arrayToString(array));
         return array;
     }
 
