@@ -1,7 +1,4 @@
 public class ArrayTools {
-    private static float[] arg = {3.544f, 5.544f, 6.544f, 6.544f};
-    private static int[] argi = {3, 5, 6, 6};
-    private static String[] args = {"a","b","c","d"};
     public static int head(int[] array){
         return array[0];
     }
@@ -79,15 +76,12 @@ public class ArrayTools {
         System.out.println(arrayToString(array));
         return array;
     }
-    public static float[] swap(float[] array, int index1, int index2){
-        float indexOne = array[index1];
-        float indexTwo = array[index2];
-        array[index1] = indexTwo;
-        array[index2] = indexOne;
-        System.out.println(arrayToString(array));
+    public static float[] swap(float[] array, int i, int j){
+        float temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
         return array;
     }
-    static char[] myCharArray = {'a', 'b', 'c'};
     public static char[] leftShift(char[] array){
         if (array.length>0){
             char index0 = array[0];
@@ -98,13 +92,6 @@ public class ArrayTools {
             array[array.length-1] = index0;
         }
         return array;
-    }
-
-
-
-
-    public static void main(String[] args) {
-        leftShift(myCharArray);
     }
 
 
