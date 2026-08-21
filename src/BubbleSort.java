@@ -1,8 +1,5 @@
 public class BubbleSort {
 
-    private static int[] arg = {3, 7, 6, 1};
-    private static int[] arg1 = {1,2,3,5};
-
     public static String arrayToString(int[] array){
         String arrays = "[";
         for (int number : array){
@@ -53,9 +50,5 @@ public class BubbleSort {
             runOneCycle(array);
         }
         return array;
-    }
-
-    public static void main(String[] args) {
-        sort(arg);
     }
 }
