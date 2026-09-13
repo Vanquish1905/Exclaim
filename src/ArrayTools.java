@@ -35,17 +35,21 @@ public class ArrayTools {
     }
 
     public static int[] copy(int[] array) {
-        int[] arrays = new int[array.length];
-        System.arraycopy(array, 0, arrays, 0, array.length);
-        return arrays;
+        int[] copy = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            copy[i] = array[i];
+        }
+        return copy;
     }
 
     public static int[] copy(int[] array, int start, int end) {
-        int[] arrays = new int[end - start];
-        if (start < end && end <= array.length) {
-            if (end - start >= 0) System.arraycopy(array, start, arrays, start - start, end - start);
+        int length = end - start + 1;
+        int[] copy = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            copy[i] = array[start + i];
         }
-        return arrays;
+        return copy;
     }
 
     public static int[] addSlot(int[] array) {
@@ -92,6 +96,27 @@ public class ArrayTools {
             array[array.length - 1] = index0;
         }
         return array;
+    }
+    public static int[] concat(int[] array1, int[] array2) {
+        int[] array = new int[array1.length + array2.length];
+        System.arraycopy(array1, 0, array, 0, array1.length);
+        System.arraycopy(array2, 0, array, array1.length, array2.length);
+        System.out.println(arrayToString(array));
+        return array;
+    }
+    public static int[] remove(int[] array, int index){
+        int[] left = (index > 0) ? copy(array, 0, index - 1) : new int[0];
+        int[] right = (index < array.length - 1) ? copy(array, index + 1, array.length - 1) : new int[0];
+        int[] result = concat(left, right);
+        return result;
+    }
+    public static int indexOfMin(int[] array){
+        if (array == null) return 0;
+        int indexMin = array[0];
+        for (int element:array){
+            if (indexMin>element) indexMin=element;
+        }
+        return indexMin;
     }
 
 
