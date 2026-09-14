@@ -111,7 +111,7 @@ public class ArrayTools {
         return result;
     }
     public static int indexOfMin(int[] array){
-        if (array == null) return 0;
+        if (array == null) return -1;
         int indexMin = array[0];
         for (int element:array){
             if (indexMin>element) indexMin=element;
