@@ -85,6 +85,12 @@ public class ArrayTools {
         array[j] = temp;
         return array;
     }
+    public static int[] swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+        return array;
+    }
 
     public static char[] leftShift(char[] array) {
         if (array.length > 0) {
@@ -110,13 +116,24 @@ public class ArrayTools {
         int[] result = concat(left, right);
         return result;
     }
-    public static int indexOfMin(int[] array){
-        if (array == null) return -1;
-        int indexMin = array[0];
-        for (int element:array){
-            if (indexMin>element) indexMin=element;
+    public static int indexOfMin(int[] array) {
+        if (array == null || array.length == 0) return -1;
+        int minIndex = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[minIndex]) minIndex = i;
         }
-        return indexMin;
+        return minIndex;
+    }
+    public static int indexOfMin(int[] array, int startIndex) {
+        if (array == null || array.length == 0 || startIndex >= array.length) return -1;
+
+        int minIndex = startIndex;
+        for (int i = startIndex + 1; i < array.length; i++) {
+            if (array[i] < array[minIndex]) {
+                minIndex = i;
+            }
+        }
+        return minIndex;
     }
 
 
