@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class SelectionSort extends ArrayTools{
@@ -8,6 +7,7 @@ public class SelectionSort extends ArrayTools{
         list.set(j,temp);
         return list;
     }
+
     public static int indexOfMin(List<Integer> list){
         if (list == null || list.isEmpty()) return -1;
         int minIndex = 0;
@@ -16,6 +16,7 @@ public class SelectionSort extends ArrayTools{
         }
         return minIndex;
     }
+
     public static int indexOfMin(List<Integer> list, int startIndex) {
         if (list == null || list.isEmpty() || startIndex >= list.size()) return -1;
 
@@ -27,6 +28,7 @@ public class SelectionSort extends ArrayTools{
         }
         return minIndex;
     }
+
     public static List<Integer> sort(List<Integer> list){
         if (list == null|| list.isEmpty()) return null;
         for(int i =0; i<list.size(); i++){
@@ -34,6 +36,7 @@ public class SelectionSort extends ArrayTools{
         }
         return list;
     }
+
     public static int[] sort(int[] array){
         if (array ==null||array.length==0)return null;
         for(int i =0; i<array.length;i++){
@@ -42,9 +45,4 @@ public class SelectionSort extends ArrayTools{
         return array;
     }
 
-    public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(List.of(80, 2, 51, 3, 1, 5, 7, 2, 9));
-        int[] arg = {80,2,51,3,1,5,7,2,9};
-        sort(list);
-    }
 }

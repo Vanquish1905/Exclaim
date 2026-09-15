@@ -103,6 +103,7 @@ public class ArrayTools {
         }
         return array;
     }
+
     public static int[] concat(int[] array1, int[] array2) {
         int[] array = new int[array1.length + array2.length];
         System.arraycopy(array1, 0, array, 0, array1.length);
@@ -110,12 +111,14 @@ public class ArrayTools {
         System.out.println(arrayToString(array));
         return array;
     }
+
     public static int[] remove(int[] array, int index){
         int[] left = (index > 0) ? copy(array, 0, index - 1) : new int[0];
         int[] right = (index < array.length - 1) ? copy(array, index + 1, array.length - 1) : new int[0];
         int[] result = concat(left, right);
         return result;
     }
+
     public static int indexOfMin(int[] array) {
         if (array == null || array.length == 0) return -1;
         int minIndex = 0;
@@ -124,6 +127,7 @@ public class ArrayTools {
         }
         return minIndex;
     }
+
     public static int indexOfMin(int[] array, int startIndex) {
         if (array == null || array.length == 0 || startIndex >= array.length) return -1;
 
@@ -135,6 +139,5 @@ public class ArrayTools {
         }
         return minIndex;
     }
-
 
 }
